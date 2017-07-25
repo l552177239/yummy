@@ -70,10 +70,20 @@
 
 /* General sidebar styles */
 .bm-menu {
+  padding: 0;
   background: #fff;
 }
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
   display: none;
+}
+
+/* userinfo */
+
+.bm-menu  img{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  
 }

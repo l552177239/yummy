@@ -6,9 +6,9 @@ import {
   Switch
 } from 'react-router-dom'
 
-import Sidebar from './ui/shared/Sidebar/Sidebar'
 import Home from './ui/pages/Home/Home'
 import Signup from './ui/pages/Signup/Signup'
+import Sidebar from './ui/shared/Sidebar/Sidebar'
 
 class App extends Component{
   render(){

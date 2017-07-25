@@ -8,18 +8,18 @@ class Home extends Component{
     return(
       <div className="home">
         <div className='hero'>
-        {/* hero最醒目的版块 */}
-        <img className='app-logo' src={logo} alt='logo' />
-        <h1 className='title'>
-          吮指
-        </h1>
-        <p className='slogan'>
-          享受舌尖艳遇
-        </p>
+          {/* hero最醒目的版块 */}
+          <img className='app-logo' src={logo} alt='logo' />
+          <h1 className='title'>
+            吮指
+          </h1>
+          <p className='slogan'>
+            享受舌尖艳遇
+          </p>
+        </div>
         <div className='actions'>
           <Link to='/signup'>注册</Link>
           <Link to='/login'>登录</Link>
-        </div>
         </div>
       </div>
     )
