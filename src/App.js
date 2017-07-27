@@ -11,6 +11,7 @@ import Signup from './ui/pages/Signup/Signup'
 import Login from './ui/pages/Login/Login'
 import Sidebar from './ui/shared/Sidebar/Sidebar'
 import AlertBox from './ui/shared/AlertBox/AlertBox'
+import Dashboard from './ui/pages/Dashboard/Dashboard'
 
 class App extends Component{
   render(){
