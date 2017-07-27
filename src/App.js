@@ -10,7 +10,7 @@ import Home from './ui/pages/Home/Home'
 import Signup from './ui/pages/Signup/Signup'
 import Login from './ui/pages/Login/Login'
 import Sidebar from './ui/shared/Sidebar/Sidebar'
-
+import AlertBox from './ui/shared/AlertBox/AlertBox'
 
 class App extends Component{
   render(){
@@ -18,7 +18,7 @@ class App extends Component{
       <div className="App">
         <Router>
           <div>
-
+            <AlertBox />
             <Route render={({ location }) => {
                   return location.pathname !== '/' ?
                   (<Sidebar />) : null
