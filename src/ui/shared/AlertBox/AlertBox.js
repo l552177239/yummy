@@ -1,24 +1,19 @@
 import React, { Component } from 'react'
 import './alert-box.css'
+import { connect } from 'react-redux'
 
 class AlertBox extends Component {
 
-  state = {
-    showAlert: true
-  }
-
   closeAlert = () => {
-    this.setState({
-      showAlert: false
-    })
+    this.props.dispatch({ type: 'HIDE_ALERT' })
   }
 
   render() {
     return(
-      <div className={  this.state.showAlert ? "alert-box show" : "alert-box" }>
+      <div className={  this.props.showAlert ? "alert-box show" : "alert-box" }>
         <div className="alert-content-card">
           <div className="alert-msg">
-            报错信息
+            {this.props.alertMsg}
           </div>
           <div onClick={this.closeAlert}
             className="alert-close-button">
@@ -30,4 +25,9 @@ class AlertBox extends Component {
   }
 }
 
-export default AlertBox
+const mapStateToProps = (state) => ({
+  showAlert: state.app.showAlert,
+  alertMsg: state.app.alertMsg
+})
+
+export default connect(mapStateToProps)(AlertBox)

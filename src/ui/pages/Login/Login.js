@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import TitleHeader from '../../shared/TitleHeader/TitleHeader'
-import './login.css'
+import React from 'react'
 import axios from 'axios'
-import {
-  Link
-} from 'react-router-dom'
-import Settings from '../../../settings'
+import { Link } from 'react-router-dom'
+import store from '../../../redux/store'
 
-class Login extends Component {
+import './login.css'
+import Settings from '../../../settings'
+import TitleHeader from '../../shared/TitleHeader/TitleHeader'
+
+class Login extends React.Component {
 
   login = (e) => {
     e.preventDefault()
@@ -16,8 +16,13 @@ class Login extends Component {
       password: this.passwordInput.value
     }
     axios.post(`${Settings.host}/user/login`, data)
-    .then( res => this.props.history.push('/dashboard'))
-    .catch(err => alert(err.response.data.msg))
+    .then( res => {
+      store.dispatch({ type:'SHOW_ALERT', msg:res.data.msg })
+      this.props.history.push('/dashboard')
+    })
+    .catch(err =>
+      store.dispatch({ type:'SHOW_ALERT', msg:err.response.data.msg })
+    )
   }
 
   render() {

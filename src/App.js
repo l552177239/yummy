@@ -1,5 +1,5 @@
 import React from 'react'
-
+import axios from 'axios'
 import './App.css'
 import {
   BrowserRouter as Router,
@@ -7,7 +7,7 @@ import {
   Switch
 } from 'react-router-dom'
 import store from './redux/store'
-
+import Settings from './settings'
 import { Provider } from 'react-redux'
 
 import Home from './ui/pages/Home/Home'
@@ -18,6 +18,16 @@ import AlertBox from './ui/shared/AlertBox/AlertBox'
 import Dashboard from './ui/pages/Dashboard/Dashboard'
 
 class App extends React.Component{
+  componentWillMount(){
+    let userId = localStorage.getItem('userId')
+    if(userId){
+      axios.get(`${Settings.host}/user/${userId}`)
+      .then(res => {
+        store.dispatch({ type:'SIGN_IN', username: res.data.user.username })
+        
+      })
+    }
+  }
   render(){
     return(
       <Provider store={store}>

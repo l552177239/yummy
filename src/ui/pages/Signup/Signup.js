@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import TitleHeader from '../../shared/TitleHeader/TitleHeader'
-import './signup.css'
+import React from 'react'
 import axios from 'axios'
-import {
-  Link
-} from 'react-router-dom'
-import Settings from '../../../settings'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-class Signup extends Component {
+import './signup.css'
+import Settings from '../../../settings'
+import TitleHeader from '../../shared/TitleHeader/TitleHeader'
+
+class Signup extends React.Component {
 
   signup = (e) => {
     e.preventDefault()
@@ -16,8 +16,14 @@ class Signup extends Component {
       password: this.passwordInput.value
     }
     axios.post(`${Settings.host}/user/signup`, data)
-    .then( res => this.props.history.push('/dashboard') )
-    .catch(err => alert(err.response.data.msg))
+    .then( res => {
+      this.props.dispatch({ type:'SIGN_IN', username: res.data.username })
+      localStorage.setItem('userId', res.data.userId)
+      this.props.history.push('/dashboard')
+    })
+    .catch(err =>
+      this.props.dispatch({ type:'SHOW_ALERT', msg:err.response.data.msg })
+    )
   }
 
   render() {
@@ -55,4 +61,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup
+export default connect(null)(Signup)
