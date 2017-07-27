@@ -1,20 +1,20 @@
-.signup {
+.login {
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
-.signup-content {
+.login-content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
 /*  Hero 部分 */
-.signup-hero {
+.login-hero {
   height: 140px;
 }
 
-.signup-hero .title {
+.login-hero .title {
   font-size: 36px;
   color: #FFFFFF;
   line-height: 42px;
@@ -22,7 +22,7 @@
   margin-top: 54px;
 }
 
-.signup-hero .slogan {
+.login-hero .slogan {
   text-align: center;
   margin-top: 10px;
   font-size: 16px;
@@ -32,7 +32,7 @@
 
 /* form input 部分 */
 
-.signup-form {
+.login-form {
   display: flex;
   flex-direction: column;
   width: 280px;
@@ -40,14 +40,14 @@
   flex-grow: 1;
 }
 
-.signup-text-inputs {
+.login-text-inputs {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   justify-content: space-around;
 }
 
-.signup-form input {
+.login-form input {
   line-height: 56px;
   border: 0;
   outline: 0;
@@ -56,26 +56,26 @@
   color: #878787;
 }
 
-.signup-form input::placeholder {
+.login-form input::placeholder {
   color: #CECECE;
 }
 
-.signup-text-inputs-inner {
+.login-text-inputs-inner {
   display: flex;
   flex-direction: column;
 }
 
-.signup-other-option {
+.login-other-option {
   margin-bottom: 35px;
   margin-top: 15px;
   text-align: center;
 }
-.signup-other-option a {
+.login-other-option a {
   color: white;
   line-height: 20px;
 }
 
-.signup-actions button {
+.login-actions button {
   display: block;
   border: 0;
   line-height: 56px;
@@ -88,23 +88,23 @@
   border-radius: 2px;
   font-size: 14px;
   color: #F77062;
-}.signup {
+}.login {
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
-.signup-content {
+.login-content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
 /*  Hero 部分 */
-.signup-hero {
+.login-hero {
   height: 140px;
 }
 
-.signup-hero .title {
+.login-hero .title {
   font-size: 36px;
   color: #FFFFFF;
   line-height: 42px;
@@ -112,7 +112,7 @@
   margin-top: 54px;
 }
 
-.signup-hero .slogan {
+.login-hero .slogan {
   text-align: center;
   margin-top: 10px;
   font-size: 16px;
@@ -122,7 +122,7 @@
 
 /* form input 部分 */
 
-.signup-form {
+.login-form {
   display: flex;
   flex-direction: column;
   width: 280px;
@@ -130,14 +130,14 @@
   flex-grow: 1;
 }
 
-.signup-text-inputs {
+.login-text-inputs {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   justify-content: space-around;
 }
 
-.signup-form input {
+.login-form input {
   line-height: 56px;
   border: 0;
   outline: 0;
@@ -146,27 +146,27 @@
   color: #878787;
 }
 
-.signup-form input::placeholder {
+.login-form input::placeholder {
   color: #CECECE;
 }
 
-.signup-text-inputs-inner {
+.login-text-inputs-inner {
   display: flex;
   flex-direction: column;
 }
 
-.signup-other-option {
+.login-other-option {
   margin-bottom: 35px;
   margin-top: 15px;
   text-align: center;
 }
-.signup-other-option a {
+.login-other-option a {
   color: white;
   font-size: 12px;
   line-height: 20px;
 }
 
-.signup-actions button {
+.login-actions button {
   display: block;
   border: 0;
   line-height: 56px;

@@ -8,7 +8,9 @@ import {
 
 import Home from './ui/pages/Home/Home'
 import Signup from './ui/pages/Signup/Signup'
+import Login from './ui/pages/Login/Login'
 import Sidebar from './ui/shared/Sidebar/Sidebar'
+
 
 class App extends Component{
   render(){
@@ -16,12 +18,14 @@ class App extends Component{
       <div className="App">
         <Router>
           <div>
+
             <Route render={({ location }) => {
                   return location.pathname !== '/' ?
                   (<Sidebar />) : null
                 }} />
           <Switch>
             <Route exact path='/' component={Home} />
+            <Route path='/login' component={Login} />
             <Route path='/signup' component={Signup} />
           </Switch>
         </div>

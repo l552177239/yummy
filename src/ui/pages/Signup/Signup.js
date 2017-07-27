@@ -1,12 +1,25 @@
 import React, { Component } from 'react'
 import TitleHeader from '../../shared/TitleHeader/TitleHeader'
 import './signup.css'
+import axios from 'axios'
 import {
   Link
 } from 'react-router-dom'
+import Settings from '../../../settings'
 
 class Signup extends Component {
-  
+
+  signup = (e) => {
+    e.preventDefault()
+    let data = {
+      username: this.usernameInput.value,
+      password: this.passwordInput.value
+    }
+    axios.post(`${Settings.host}/user/signup`, data)
+    .then( res => this.props.history.push('/dashboard') )
+    .catch(err => alert(err.response.data.msg))
+  }
+
   render() {
     return(
       <div className="signup">
@@ -20,12 +33,12 @@ class Signup extends Component {
               连接小而确定的幸福
             </p>
           </div>
-          <form className="signup-form">
+          <form onSubmit={this.signup} className="signup-form">
             <div className="signup-text-inputs">
               <div className="signup-text-inputs-inner">
-                <input type="text" placeholder="用户名" />
+                <input type="text" ref={value => this.usernameInput = value} placeholder="用户名" />
                 <input type="text" placeholder="Email" />
-                <input type="password" placeholder="password" />
+                <input type="password" ref={value => this.passwordInput = value} placeholder="password" />
                 <input type="password" placeholder="再输一遍" />
               </div>
             </div>
