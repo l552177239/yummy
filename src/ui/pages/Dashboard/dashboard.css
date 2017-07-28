@@ -4,7 +4,6 @@
 
 .dashboard .feed-wrap {
   background-color: #F9FAFB;
-  border: 2px solid blue;
   min-height: 400px;
 }
 
@@ -36,10 +35,6 @@
 .dashboard .feed-user-time {
   font-size: 12px;
   color: #878787;
-}
-
-.dashboard .feed-item-header>* {
-  border: 2px solid red;
 }
 
 .dashboard .feed-user {

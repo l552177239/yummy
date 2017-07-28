@@ -1,33 +1,27 @@
 import React, { Component } from 'react'
 import TitleHeader from '../../shared/TitleHeader/TitleHeader'
 import './dashboard.css'
-import svg from './comment.svg'
+import FeedItem from './FeedItem'
 
 class Dashboard extends Component  {
+
+
+  cards = [
+    {username: 'Billie Zhang', comment: '真是好吃'},
+    {username: 'Peter Wang', comment: '不错'},
+    {username: 'Peter Wang', comment: '3星'},
+  ]
   render() {
+    const cardList = this.cards.map((c, index) => {
+      return (
+        <FeedItem key={index} username={c.username} comment={c.comment} />
+      )
+    })
     return(
       <div className="dashboard">
         <TitleHeader title="好友更新"/>
         <div className="feed-wrap">
-          <div className="feed-item">
-            <div className="feed-item-header">
-              <div className="feed-user">
-                <img src="http://media.haoduoshipin.com/yummy/default-avatar.png"  alt="avtar" />
-                <div className="feed-user-name-wrap">
-                  <div className="feed-user-name">
-                    Billie Zhang
-                  </div>
-                  <div className="feed-user-time">
-                    2017年7月
-                  </div>
-                </div>
-              </div>
-              <div className="feed-comment-btn">
-                <img src={svg} alt="comment" />
-              </div>
-            </div>
-          </div>
-
+          {cardList}
         </div>
       </div>
     )
