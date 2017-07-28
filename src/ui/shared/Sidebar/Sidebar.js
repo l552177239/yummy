@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
-import {
-  Link
-} from 'react-router-dom'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 import './sidebar.css'
 
 import { slide as Menu } from 'react-burger-menu'
-import { connect } from 'react-redux'
 
-class Sidebar extends Component {
+class Sidebar extends React.Component {
 
   state = {
     isOpen: false
@@ -15,12 +13,19 @@ class Sidebar extends Component {
 
   closeBmMenu = () => {
     this.setState({
-      isOpen: true
+      isOpen: false
     })
+  }
+
+  logout = () => {
+    localStorage.removeItem('userId')
   }
   render() {
     let authStr = (
-      <div>登录|注册</div>
+      <div>
+        <Link to='/signup' onClick={this.closeBmMenu}>注册</Link>|
+        <Link to='/login'  onClick={this.closeBmMenu}>登录</Link>
+    </div>
     )
 
     let userInfo = (
@@ -28,7 +33,7 @@ class Sidebar extends Component {
         <Link to="" className="bm-user-left">
           {this.props.currentUser}
         </Link>
-        <Link to="" className="bm-user-right">
+        <Link to="" className="bm-user-right" onClick={this.logout}>
           退出
         </Link>
       </div>

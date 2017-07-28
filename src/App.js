@@ -24,7 +24,6 @@ class App extends React.Component{
       axios.get(`${Settings.host}/user/${userId}`)
       .then(res => {
         store.dispatch({ type:'SIGN_IN', username: res.data.user.username })
-        
       })
     }
   }
