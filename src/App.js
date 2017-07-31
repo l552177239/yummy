@@ -11,8 +11,9 @@ import Settings from './settings'
 import { Provider } from 'react-redux'
 
 import Home from './ui/pages/Home/Home'
-import Signup from './ui/pages/Signup/Signup'
 import Login from './ui/pages/Login/Login'
+import Dish from './ui/pages/Dish/Dish'
+import Signup from './ui/pages/Signup/Signup'
 import Sidebar from './ui/shared/Sidebar/Sidebar'
 import AlertBox from './ui/shared/AlertBox/AlertBox'
 import Dashboard from './ui/pages/Dashboard/Dashboard'
@@ -50,6 +51,7 @@ class App extends React.Component{
               <Route path='/login' component={Login} />
               <Route path='/signup' component={Signup} />
               <Route path="/dashboard" component={Dashboard} />
+              <Route path="/dish/:dishId" component={Dish} />
             </Switch>
           </div>
           </Router>

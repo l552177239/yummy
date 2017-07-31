@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import svg from './comment.svg'
 import CommentIcon from '../../icon/CommentIcon'
 
 class FeedItem extends React.Component {
@@ -40,8 +39,8 @@ class FeedItem extends React.Component {
                 <CommentIcon color={ this.state.expand ? '#FE5196' : '#D0D0D0'}/>
             </div>
           </div>
-          <Link   style={{ 'backgroundImage': `url(http://media.haoduoshipin.com/yummy/dishes/dish1.jpg)`}}
-            to={`/dish/`} className='feed-dish'>
+          <Link style={{ 'backgroundImage': `url(http://media.haoduoshipin.com/yummy/dishes/dish1.jpg)`}}
+            to={`/dish/597be20c2bbfdbaa14bfa248`} className='feed-dish'>
           </Link>
       </div>
     </div>
