@@ -26,7 +26,14 @@ class App extends React.Component{
         store.dispatch({ type:'SIGN_IN', username: res.data.user.username })
       })
     }
-  }
+    // LOAD_DISHES
+    axios.get(`${Settings.host}/dishes`)
+      .then(res => {
+        let { dishes } = res.data
+        store.dispatch({type:'LOAD_DISHES',dishes})
+      })
+      .catch(err => store.dispatch({ type:'SHOW_ALERT', msg:'请求失败' }))
+    }
   render(){
     return(
       <Provider store={store}>

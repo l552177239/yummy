@@ -18,6 +18,7 @@ class Login extends React.Component {
     axios.post(`${Settings.host}/user/login`, data)
     .then( res => {
       store.dispatch({ type: 'SIGN_IN', username: res.data.username })
+      localStorage.setItem('userId',res.data.userId)
       this.props.history.push('/dashboard')
     })
     .catch(err =>

@@ -27,7 +27,7 @@ class Sidebar extends React.Component {
         <Link to='/login'  onClick={this.closeBmMenu}>登录</Link>
     </div>
     )
-
+    console.log(this.props)
     let userInfo = (
       <div>
         <Link to="" className="bm-user-left">

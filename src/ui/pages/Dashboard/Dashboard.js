@@ -4,8 +4,6 @@ import './dashboard.css'
 import FeedItem from './FeedItem'
 
 class Dashboard extends Component  {
-
-
   cards = [
     {username: 'Billie Zhang', comment: '真是好吃'},
     {username: 'Peter Wang', comment: '不错'},
